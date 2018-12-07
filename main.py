@@ -73,7 +73,7 @@ def find(data, key):
         # _find(data,key)
     elif key < data[half]:
         return find(data_first, key)
-        # error because of the type above
+        # error because of the typo above
     else:
         return find(data_second, key)
 
