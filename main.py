@@ -2,7 +2,11 @@
 # SELECT customers.gender, avg(duration) FROM (SELECT caller_id, duration FROM calls UNION SELECT callee_id, duration FROM calls) as call
 # JOIN customers ON (call.caller_id = customers.id) GROUP BY gender
 # SQL 2:
-
+# O(n*m) where n is the number of records in the parents table and m is the number of
+# records in the children table. First it runs through the parents table, finds all the records
+# which match the criteria, and then does the same with the children table.
+# Concatenation is a constant time process, so there should be no considerable difference between
+# the two queries
 
 def main():
     board = [[1, 5, 7, 10], [3, 13, 14, 15], [6, 16, 19, 25]]
