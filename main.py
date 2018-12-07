@@ -5,6 +5,7 @@
 # O(n*m) where n is the number of records in the parents table and m is the number of
 # records in the children table. First it runs through the parents table, finds all the records
 # which match the criteria, and then does the same with the children table.
+# A count variable should be kept up-to-date while going through the children table.
 # Concatenation is a constant time process, so there should be no considerable difference between
 # the two queries
 
@@ -80,4 +81,3 @@ def find(data, key):
 if __name__ == "__main__":
     main()
 
-    print(find([1, 2, 3, 4, 5, 6], 3))
